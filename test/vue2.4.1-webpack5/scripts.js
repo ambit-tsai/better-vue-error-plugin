@@ -1,16 +1,17 @@
 const webpack = require('webpack');
-const VueBetterErrorPlugin = require('../../');
+const path = require('path');
+const BetterVueErrorPlugin = require('../../');
 
 
 webpack({
     mode: 'development',
-    entry: `${__dirname}/src/main.js`,
+    entry: path.resolve(__dirname, '../vue2.4.1-webpack4/src/main.js'),
     output: {
         path: `${__dirname}/dist`,
         filename: 'index.js',
     },
     plugins: [
-        new VueBetterErrorPlugin(),
+        new BetterVueErrorPlugin(),
     ],
 }, (err, stats) => {
     if (err) {

@@ -1,14 +1,14 @@
 {
-  "name": "vue2-webpack4",
+  "name": "vue2.4.1-webpack5",
   "version": "1.0.0",
-  "description": "test with vue 2 and webpack 4",
+  "description": "test with vue 2.4.1 and webpack 5",
   "scripts": {
     "test": "node ./scripts.js"
   },
   "author": "Ambit-Tsai <ambit_tsai@qq.com>",
   "license": "Apache-2.0",
   "dependencies": {
-    "vue": "2.6.0",
-    "webpack": "4.0.0"
+    "vue": "2.4.1",
+    "webpack": "5.0.0"
   }
 }

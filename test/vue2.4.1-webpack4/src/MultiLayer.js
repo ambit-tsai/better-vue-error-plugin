@@ -1,6 +1,6 @@
 
 function getComponent(count, child) {
-    const name = `Component_${count}`;
+    const name = `Component${count}`;
     return {
         name,
         render: h => h('div', {}, [
@@ -15,9 +15,9 @@ function getComponent(count, child) {
 }
 
 
-let count = 10;
+let count = 15;
 let component = {
-    name: 'MyButton',
+    name: 'HelloWorld',
     render: h => h('button', {
         domProps: {
             innerText: 'click me',
