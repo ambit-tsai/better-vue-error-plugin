@@ -16,14 +16,25 @@ function getComponent(count, child) {
 
 
 let count = 10;
-let component;
+let component = {
+    name: 'MyButton',
+    render: h => h('button', {
+        domProps: {
+            innerText: 'click me',
+        },
+        on: {
+            click() {
+                a.b + c
+            }
+        },
+    }),
+    mounted: function () {
+        throw new Error('a test error');
+    },
+};
+
 while(count) {
     component = getComponent(count--, component);
-    if (count === 1) {
-        component.mounted = function () {
-            throw new Error('a test error');
-        };
-    }
 }
 
 

@@ -81,17 +81,16 @@ module.exports = {
         }
     }`,
 
-    logInvokeError: `function logInvokeError(info, args, handler) {
-        var msg = info;
-        if (args instanceof Object && args[0] instanceof Event) {
-            msg += ' "' + args[0].type + '"';
+    logInvokeError: `function logInvokeError(info, handler) {
+        if (info === 'v-on handler') {
+            var msg = 'ℹ️ v-on:' + handler.name + '="'
+                + handler.toString()
+                    .replace(/^[^{]+\\{\\s*/, '')
+                    .replace(/\\s*\\}$/, '')
+                    .replace(/_vm\\./g, '')
+                + '"';
+            console.error(msg);
         }
-        msg += ': "' + handler.toString()
-                .replace(/^[^{]+\\{\\s*(return)?\\s*/, '')
-                .replace(/\\s*\\}$/, '')
-                .replace(/_vm\\./g, '')
-            + '"';
-        console.error(msg);
     }`,
 
     invokeWithErrorHandling: `function invokeWithErrorHandling(
@@ -106,7 +105,7 @@ module.exports = {
             res = args ? handler.apply(context, args) : handler.call(context);
             if (res && !res._isVue && isPromise(res) && !res._handled) {
                 res.catch(function (e) {
-                    logInvokeError(info, args, handler);
+                    logInvokeError(info, handler);
                     return handleError(e, vm, info + " (Promise/async)");
                 });
                 // issue #9511
@@ -114,7 +113,7 @@ module.exports = {
                 res._handled = true;
             }
         } catch (e) {
-            logInvokeError(info, args, handler);
+            logInvokeError(info, handler);
             handleError(e, vm, info);
         }
         return res
