@@ -1,7 +1,7 @@
 {
   "name": "better-vue-error-plugin",
   "version": "0.1.0",
-  "description": "",
+  "description": "A webpack plugin make the errors of Vue concise",
   "main": "src/plugin.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,5 +15,20 @@
     "@babel/traverse": "^7.0.0",
     "vue": ">2.4.0",
     "webpack": ">=4.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ambit-tsai/better-vue-error-plugin.git"
+  },
+  "homepage": "https://github.com/ambit-tsai/better-vue-error-plugin#readme",
+  "bugs": {
+    "url": "https://github.com/ambit-tsai/better-vue-error-plugin/issues"
+  },
+  "keywords": [
+    "webpack",
+    "plugin",
+    "vue",
+    "error",
+    "better"
+  ]
 }
