@@ -1,6 +1,6 @@
 {
   "name": "better-vue-error-plugin",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A webpack plugin make the errors of Vue concise",
   "main": "src/plugin.js",
   "scripts": {
@@ -10,11 +10,6 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@babel/traverse": "^7.0.0"
-  },
-  "engines": {
-    "@babel/traverse": "^7.0.0",
-    "vue": ">2.4.0",
-    "webpack": ">=4.0.0"
   },
   "repository": {
     "type": "git",
