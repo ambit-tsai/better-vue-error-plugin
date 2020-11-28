@@ -1,5 +1,9 @@
+简体中文 | [English](https://github.com/ambit-tsai/better-vue-error-plugin)
+
+
 # Better Vue Error Plugin
 🔌 使 Vue 错误变得简洁的 Webpack 插件
+
 
 ## 效果
 ### 使用前
@@ -14,10 +18,12 @@
 
 ![after02](https://gitee.com/ambit/better-vue-error-plugin/raw/main/imgs/after02.png)
 
+
 ## 安装
 ```
 npm i -D better-vue-error-plugin
 ```
+
 
 ## 用法
 ```javascript
@@ -33,21 +39,25 @@ module.exports = {
 }
 ```
 
+
 ## 依赖
 1. **@babel/traverse**: ^7.0.0
 1. **webpack**: >=4.0.0
 1. **vue**: >2.4.0
 
+
 ## 参数
 |属性|类型|默认值|说明|
 |-|-|-|-|
 |moduleName|string|"vue"|目标模块的名称|
+
 示例
 ```javascript
 new BetterVueErrorPlugin({
     moduleName: 'vue',
 });
 ```
+
 
 ## 联系
 1. *微信*: ambit_tsai
